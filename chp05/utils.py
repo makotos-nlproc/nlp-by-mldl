@@ -29,4 +29,11 @@ def load_dataset(filename, n=500, state=6):
 
 
 def train_and_eval(x_train, y_train, x_test, y_test, vectorizer):
-    # p.100途中まで
+    x_train_vec = vectorizer.fit_transform(x_train)
+    x_test_vec = vectorizer.transform(x_test)
+    clf = logisticRegression(solver='liblinear')
+    clf.fit(x_test_vec, y_train)
+    y_pred = clf.predict(x_test_vec)
+    score = accuracy_score(y_test, y_pred)
+    print('{:.4f}'.format(score))
+    
