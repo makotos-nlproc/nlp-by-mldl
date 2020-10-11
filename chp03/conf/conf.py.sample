@@ -1,0 +1,5 @@
+URL = ''
+API_KEY = ''
+
+RAW_DATA = 'data/raw_data.json'
+SAVE_FILE = 'data/dataset.jsonl'
