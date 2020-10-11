@@ -13,3 +13,9 @@
 - SQuAD
 - MS MARCO
 
+## アノテーションツール
+- brat
+- doccano
+- prodigy
+- tagtog
+- LightTag
