@@ -17,4 +17,21 @@ def main():
     
 
     print('Binary')
-    
+    vectorizer = CountVectorizer(binary=True)
+    train_and_eval(x_train, y_train, x_test, y_test, vectorizer)
+
+    print('COunt')
+    vectorizer = CountVectorizer(binary=False)
+    train_and_eval(x_train, y_train, x_test, y_test, vectorizer)
+
+    print('TF-IDF')
+    vectorizer = TfidfVectorizer()
+    train_and_eval(x_train, y_train, x_test, y_test, vectorizer)
+
+    print('Bigram')
+    vectorizer = TfidfVectorizer(ngram_range=(1, 2))
+    train_and_eval(x_train, y_train, x_test, y_test, vectorizer)
+
+
+if __main__ == '__main__':
+    main()
