@@ -30,3 +30,8 @@ def train_and_eval(x_train, y_train, x_text, y_test,
                                  preprocessor=preprocessor)
     x_train_vec = vectorizer.fit_transform(x_train)
     x_test_vec = vectorizer.transform(x_test)
+    clf = LogisticRegression(solver='liblinear')
+    clf.fit(x_train_vec, y_train)
+    y_pred = clf.predict(x_test_vec)
+    score = accuracy_score(y_test, y_pred)
+    print('{:4f}'.format(score))
