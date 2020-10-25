@@ -23,6 +23,11 @@ def plot_learning_curve(estimater, title, X, y, ylim=None, cv=None,
     test_scores_std = np.std(test_scores, axis=1)
 
     plt.grid()
+
+    plt.fill_between(train_size, train_scores_mean - train_scores_std,
+                     train_scores_mean + train_scores_std, alpha=0.1,
+                     color='r')
+
     
      
 
