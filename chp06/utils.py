@@ -28,7 +28,19 @@ def plot_learning_curve(estimater, title, X, y, ylim=None, cv=None,
                      train_scores_mean + train_scores_std, alpha=0.1,
                      color='r')
 
+    plt.fill_between(train_size, test_scores_mean - test_scores_std,
+                     test_scores_mean + test_scores_std, alpha=0.1,
+                     color='g')
+
+    plt.plot(tarin_sizes, train_scores_mean, 'o-', color='r',
+            label='training examples')
+    plt.plot(test_sizes, test_scores_mean, 'o-', color='g',
+            label='Cross-validation score')
     
+    plt.legend(loc='best')
+
+    plt.show()
+
      
 
     
